@@ -183,23 +183,23 @@ void Klondike::game_event()
                 selectGoal(0);
             else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160, 50, 140, 200)))
                 selectGoal(1);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160, 50, 140, 200)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 2), 50, 140, 200)))
                 selectGoal(2);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160 + 160, 50, 140, 200)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 3), 50, 140, 200)))
                 selectGoal(3);
             else if (clickInRange(ev.mouseButton, sf::IntRect(50, 50, 140, 2000)))
                 selectPile(0, ev.mouseButton.y);
             else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160, 50, 140, 2000)))
                 selectPile(1, ev.mouseButton.y);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160, 50, 140, 2000)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 2), 50, 140, 2000)))
                 selectPile(2, ev.mouseButton.y);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160 + 160, 50, 140, 2000)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 3), 50, 140, 2000)))
                 selectPile(3, ev.mouseButton.y);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160 + 160 + 160, 50, 140, 2000)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 4), 50, 140, 2000)))
                 selectPile(4, ev.mouseButton.y);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160 + 160 + 160 + 160, 50, 140, 2000)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 5), 50, 140, 2000)))
                 selectPile(5, ev.mouseButton.y);
-            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + 160 + 160 + 160 + 160 + 160 + 160, 50, 140, 2000)))
+            else if (clickInRange(ev.mouseButton, sf::IntRect(50 + (160 * 6), 50, 140, 2000)))
                 selectPile(6, ev.mouseButton.y);
             else
                 m_ptr = nullptr;

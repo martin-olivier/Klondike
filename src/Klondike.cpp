@@ -9,7 +9,7 @@
 
 Klondike::Klondike() : m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(0)
 {
-    m_window.create(sf::VideoMode(760 * 2, 540 * 2), "Klondike");
+    m_window.create(sf::VideoMode(1520, 1080), "Klondike");
     m_window.setFramerateLimit(60);
     m_window.setKeyRepeatEnabled(false);
 

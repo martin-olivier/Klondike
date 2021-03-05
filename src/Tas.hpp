@@ -14,6 +14,8 @@
 
 class Tas : public std::vector<Card>
 {
+private:
+    bool isOnList(std::array<int, 52> list, int nb, int max);
 public:
     enum State {Empty, Full};
 

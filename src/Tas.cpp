@@ -6,6 +6,7 @@
 */
 
 #include "Tas.hpp"
+#include <array>
 
 Tas::Tas(Tas::State state) : std::vector<Card>()
 {
@@ -76,13 +77,13 @@ Tas::Tas(const Tas& a) : std::vector<Card>(a)
     *this = a;
 }
 
-int is_on_list(const int *list, int nb, int max)
+bool Tas::isOnList(std::array<int, 52> list, int nb, int max)
 {
     for (int i = 0; i < max; i++) {
         if (list[i] == nb)
-            return 1;
+            return true;
     }
-    return 0;
+    return false;
 }
 
 void Tas::shuffle()
@@ -91,10 +92,10 @@ void Tas::shuffle()
     srand(time(NULL));
     int nb;
     int i = 0;
-    int *list = (int *)malloc(sizeof(int) * 52);
+    std::array<int, 52> list;
     while (i != 52) {
         nb = (rand() % 52);
-        if (is_on_list(list, nb, i) == 0) {
+        if (isOnList(list, nb, i) == false) {
             list[i] = nb;
             i++;
         }

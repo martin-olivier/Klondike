@@ -15,14 +15,21 @@ std::map<int, Card::Type> goalEmplacementMap = {
         {3, Card::Type::Pique},
 };
 
-void Klondike::parameters()
+void Klondike::switchSound()
 {
-    std::cout << "Not implemented yet !" << std::endl;
+    if (m_sound) {
+        m_sound = false;
+        m_sound_icon.setTexture("resource/icons/volume_off.png");
+    }
+    else if (!m_sound) {
+        m_sound = true;
+        m_sound_icon.setTexture("resource/icons/volume.png");
+    }
 }
 
 void Klondike::handNext()
 {
-    m_card_slide.play();
+    m_card_slide.play(m_sound);
     if (m_hand_index == m_hand.size() - 1) {
         m_hand_index = 0;
         return;
@@ -43,7 +50,7 @@ void Klondike::selectGoal(unsigned int pos)
 {
     if (m_ptr == nullptr)
         return;
-    m_card_place.play();
+    m_card_place.play(m_sound);
     if (m_ptr == &m_hand) {
         if (m_hand[m_hand_index].get_value() == m_goal[pos][m_goal[pos].size() - 1].get_value() + 1 && m_hand[m_hand_index].get_type() == goalEmplacementMap[pos]) {
             m_goal[pos].push_back(m_hand[m_hand_index]);
@@ -109,7 +116,7 @@ void Klondike::action(unsigned int x, unsigned int y)
     if (m_ptr == nullptr) {
         m_ptr = &m_pile[x];
         m_selector = y;
-        m_card_slide.play();
+        m_card_slide.play(m_sound);
         return;
     }
     else if (m_ptr == &m_hand)
@@ -118,7 +125,7 @@ void Klondike::action(unsigned int x, unsigned int y)
         PileToPile(x, y);
     m_ptr = nullptr;
     m_selector = 0;
-    m_card_place.play();
+    m_card_place.play(m_sound);
 }
 
 bool Klondike::isCardValid(unsigned int x, size_t y)
@@ -165,15 +172,22 @@ void Klondike::game_event()
     sf::Event ev;
     while (m_window.pollEvent(ev)) {
         if (ev.type == sf::Event::Resized) {
-            sf::FloatRect visibleArea(0, 0, ev.size.width, ev.size.height);
+            int x = ev.size.width;
+            int y = ev.size.height;
+            if (ev.size.width < 1400)
+                x = 1400;
+            if (ev.size.height < 900)
+                y = 900;
+            m_window.setSize(sf::Vector2u(x, y));
+            sf::FloatRect visibleArea(0, 0, x, y);
             m_window.setView(sf::View(visibleArea));
         }
         if (ev.type == sf::Event::Closed)
             m_window.close();
         else if (ev.type == sf::Event::MouseButtonReleased && ev.mouseButton.button == sf::Mouse::Left) {
-            if (clickInRange(ev.mouseButton, sf::IntRect(1400, 50, 70, 70)))
-                parameters();
-            else if (clickInRange(ev.mouseButton, sf::IntRect(1400, 150, 70, 70)))
+            if (clickInRange(ev.mouseButton, sf::IntRect(1300, 50, 70, 70)))
+                switchSound();
+            else if (clickInRange(ev.mouseButton, sf::IntRect(1300, 150, 70, 70)))
                 reset();
             else if (clickInRange(ev.mouseButton, sf::IntRect(850, 50, 140, 200)))
                 selectHand();

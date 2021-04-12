@@ -21,7 +21,8 @@ void Sound::setSound(const std::string &path)
     sound.setBuffer(buffer);
 }
 
-void Sound::play()
+void Sound::play(bool sound_settings)
 {
-    sound.play();
+    if (sound_settings)
+        sound.play();
 }

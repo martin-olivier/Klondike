@@ -7,14 +7,17 @@
 
 #include "Klondike.hpp"
 
-Klondike::Klondike() : m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(0)
+Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(0)
 {
-    m_window.create(sf::VideoMode(1520, 1080), "Klondike");
+    m_window.create(sf::VideoMode(1400, 900), "Klondike");
     m_window.setFramerateLimit(60);
     m_window.setKeyRepeatEnabled(false);
 
     m_app_icon.loadFromFile("resource/app_icon.bmp");
     m_window.setIcon(m_app_icon.getSize().x, m_app_icon.getSize().y, m_app_icon.getPixelsPtr());
+
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
+    m_window.setPosition(sf::Vector2i(desktop.width / 2 - m_window.getSize().x/2, desktop.height/2 - m_window.getSize().y/2));
 
     m_background.setTexture("resource/backgrounds/background.bmp");
     m_void_card.setTexture("resource/cards/no_card.bmp");
@@ -22,7 +25,7 @@ Klondike::Klondike() : m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_
     m_card_back.setTexture("resource/cards/card_back.bmp");
     m_selector_up.setTexture("resource/selector_up.bmp");
     m_selector_down.setTexture("resource/selector_down.bmp");
-    m_settings_icon.setTexture("resource/icons/settings.bmp");
+    m_sound_icon.setTexture("resource/icons/volume.png");
     m_refresh_icon.setTexture("resource/icons/refresh.bmp");
     m_win.setTexture("resource/win_sprite.bmp");
 
@@ -129,10 +132,10 @@ void Klondike::draw()
         m_window.draw(m_win);
     }
 
-    rect_x = 1400;
+    rect_x = 1300;
     rect_y = 50;
-    m_settings_icon.setPosition(rect_x, rect_y);
-    m_window.draw(m_settings_icon);
+    m_sound_icon.setPosition(rect_x, rect_y);
+    m_window.draw(m_sound_icon);
     rect_y += 100;
     m_refresh_icon.setPosition(rect_x, rect_y);
     m_window.draw(m_refresh_icon);

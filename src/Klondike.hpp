@@ -25,12 +25,14 @@ private:
     Tile m_card_back;
     Tile m_selector_up;
     Tile m_selector_down;
-    Tile m_settings_icon;
+    Tile m_sound_icon;
     Tile m_refresh_icon;
     Tile m_win;
 
     Sound m_card_place;
     Sound m_card_slide;
+
+    bool m_sound;
 
     Tas m_hand;
     std::vector<Tas> m_pile;
@@ -45,7 +47,7 @@ public:
     static bool clickInRange(sf::Event::MouseButtonEvent event, sf::IntRect rect);
     void reset();
     void game_event();
-    void parameters();
+    void switchSound();
     void draw();
     void showLastCards();
     int start();

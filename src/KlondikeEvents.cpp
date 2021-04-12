@@ -179,6 +179,7 @@ void Klondike::game_event()
             if (ev.size.height < 900)
                 y = 900;
             m_window.setSize(sf::Vector2u(x, y));
+            m_background.m_sprite.setScale(static_cast<float>(x) / 1400, static_cast<float>(y) / 900);
             sf::FloatRect visibleArea(0, 0, x, y);
             m_window.setView(sf::View(visibleArea));
         }

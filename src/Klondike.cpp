@@ -19,7 +19,7 @@ Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selec
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
     m_window.setPosition(sf::Vector2i(desktop.width / 2 - m_window.getSize().x/2, desktop.height/2 - m_window.getSize().y/2));
 
-    m_background.setTexture("resource/backgrounds/background.bmp");
+    m_background.setTexture("resource/backgrounds/background.jpeg");
     m_void_card.setTexture("resource/cards/no_card.bmp");
     m_as_bar.setTexture("resource/cards/as_cards.bmp");
     m_card_back.setTexture("resource/cards/card_back.bmp");
@@ -27,7 +27,7 @@ Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selec
     m_selector_down.setTexture("resource/selector_down.bmp");
     m_sound_icon.setTexture("resource/icons/volume.png");
     m_refresh_icon.setTexture("resource/icons/refresh.bmp");
-    m_win.setTexture("resource/win_sprite.bmp");
+    m_win.setTexture("resource/win.jpeg");
 
     m_card_place.setSound("resource/sounds/cardPlace.ogg");
     m_card_slide.setSound("resource/sounds/cardSlide.ogg");
@@ -128,7 +128,7 @@ void Klondike::draw()
     }
 
     if (isGameWon()) {
-        m_win.setPosition(500, 500);
+        m_win.setPosition(350, 350);
         m_window.draw(m_win);
     }
 

@@ -23,9 +23,9 @@ public:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
     void setTexture(const std::string &path);
     void setPosition(float x, float y);
-    sf::Texture m_texture;
-    sf::Sprite m_sprite;
-    std::string m_path;
+    sf::Texture m_texture{};
+    sf::Sprite m_sprite{};
+    std::string m_path{};
 };
 
 #endif

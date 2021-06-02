@@ -18,8 +18,8 @@ public:
     void setSound(const std::string &path);
     void play(bool sound_settings);
 
-    sf::SoundBuffer buffer;
-    sf::Sound sound;
+    sf::SoundBuffer buffer{};
+    sf::Sound sound{};
 };
 
 #endif

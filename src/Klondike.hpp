@@ -16,27 +16,27 @@
 class Klondike
 {
 private:
-    sf::RenderWindow m_window;
-    sf::Image m_app_icon;
+    sf::RenderWindow m_window{};
+    sf::Image m_app_icon{};
 
-    Tile m_background;
-    Tile m_void_card;
-    Tile m_as_bar;
-    Tile m_card_back;
-    Tile m_selector_up;
-    Tile m_selector_down;
-    Tile m_sound_icon;
-    Tile m_refresh_icon;
-    Tile m_win;
+    Tile m_background{};
+    Tile m_void_card{};
+    Tile m_as_bar{};
+    Tile m_card_back{};
+    Tile m_selector_up{};
+    Tile m_selector_down{};
+    Tile m_sound_icon{};
+    Tile m_refresh_icon{};
+    Tile m_win{};
 
-    Sound m_card_place;
-    Sound m_card_slide;
+    Sound m_card_place{};
+    Sound m_card_slide{};
 
     bool m_sound;
 
     Tas m_hand;
-    std::vector<Tas> m_pile;
-    std::array<Tas, 4> m_goal;
+    std::vector<Tas> m_pile{};
+    std::array<Tas, 4> m_goal{};
 
     Tas *m_ptr;
     size_t m_selector;
@@ -44,6 +44,8 @@ private:
 public:
     Klondike();
     ~Klondike() = default;
+    Klondike(const Klondike &) = delete;
+    Klondike &operator=(const Klondike &) = delete;
     static bool clickInRange(sf::Event::MouseButtonEvent event, sf::IntRect rect);
     void reset();
     void game_event();

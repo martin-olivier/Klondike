@@ -37,10 +37,10 @@ public:
     bool operator==(const Card &a) const;
     bool operator!=(const Card &a) const;
 private:
-    Card::Color m_color;
-    Card::Type m_type;
-    int m_value;
-    bool m_status;
+    Card::Color m_color{};
+    Card::Type m_type{};
+    int m_value{};
+    bool m_status{};
 };
 
 #endif

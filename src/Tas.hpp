@@ -19,7 +19,7 @@ private:
 public:
     enum State {Empty, Full};
 
-    explicit Tas(Tas::State state = Empty);
+    Tas(Tas::State state = Empty);
     Tas(const Tas& a);
     ~Tas() = default;
     void shuffle();

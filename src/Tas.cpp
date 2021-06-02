@@ -92,7 +92,7 @@ void Tas::shuffle()
     srand(time(NULL));
     int nb;
     int i = 0;
-    std::array<int, 52> list;
+    std::array<int, 52> list{};
     while (i != 52) {
         nb = (rand() % 52);
         if (isOnList(list, nb, i) == false) {

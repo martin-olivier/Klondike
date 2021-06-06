@@ -18,12 +18,9 @@ openal
 ```
 After cloning the repository enter the following commands to build the game :
 ```
-mkdir build ; cd build
-```
-```
+mkdir build
+cd build
 cmake ..
-```
-```
 cmake --build .
 ```
 

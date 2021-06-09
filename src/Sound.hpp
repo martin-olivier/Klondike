@@ -1,12 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
-#ifndef Sound_H
-#define Sound_H
+#pragma once
 
 #include <SFML/Audio.hpp>
 
@@ -21,5 +13,3 @@ public:
     sf::SoundBuffer buffer{};
     sf::Sound sound{};
 };
-
-#endif

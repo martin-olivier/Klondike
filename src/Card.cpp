@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
 #include "Card.hpp"
 
 Card::Card(Card::Type type, int value, const std::string &path_to_texture) : Tile(path_to_texture)

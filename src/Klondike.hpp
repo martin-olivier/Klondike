@@ -1,12 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
-#ifndef Klondike_H
-#define Klondike_H
+#pragma once
 
 #include "Tas.hpp"
 #include "Tile.hpp"
@@ -69,5 +61,3 @@ public:
 
     bool isGameWon();
 };
-
-#endif

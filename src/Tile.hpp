@@ -1,12 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
-#ifndef Tile_H
-#define Tile_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -27,5 +19,3 @@ public:
     sf::Sprite m_sprite{};
     std::string m_path{};
 };
-
-#endif

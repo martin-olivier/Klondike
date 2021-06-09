@@ -1,12 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
-#ifndef Tas_H
-#define Tas_H
+#pragma once
 
 #include "Card.hpp"
 #include <vector>
@@ -28,5 +20,3 @@ public:
 };
 
 std::ostream& operator<<(std::ostream &flux, const Tas &a);
-
-#endif

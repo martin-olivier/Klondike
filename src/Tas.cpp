@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
 #include "Tas.hpp"
 #include <array>
 

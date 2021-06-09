@@ -1,12 +1,4 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
-#ifndef Card_H
-#define Card_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -42,5 +34,3 @@ private:
     int m_value{};
     bool m_status{};
 };
-
-#endif

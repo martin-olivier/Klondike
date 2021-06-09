@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
 #include "Klondike.hpp"
 
 Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(0)

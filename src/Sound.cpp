@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
 #include "Sound.hpp"
 
 Sound::Sound(const std::string &path)

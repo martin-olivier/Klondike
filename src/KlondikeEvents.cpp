@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2021
-** main.c
-** File description:
-** main
-*/
-
 #include "Klondike.hpp"
 #include <map>
 

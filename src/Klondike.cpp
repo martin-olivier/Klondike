@@ -1,6 +1,6 @@
 #include "Klondike.hpp"
 
-Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(0)
+Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selector(0), m_hand_index(npos)
 {
     m_window.create(sf::VideoMode(1400, 900), "Klondike");
     m_window.setFramerateLimit(60);
@@ -65,7 +65,7 @@ void Klondike::draw()
         rect_x += 160;
     }
     rect_x += 160;
-    if (!m_hand.empty()) {
+    if (!m_hand.empty() and m_hand_index != npos) {
         m_hand[m_hand_index].setPosition(rect_x, rect_y);
         m_window.draw(m_hand[m_hand_index]);
     }
@@ -73,7 +73,7 @@ void Klondike::draw()
     m_void_card.setPosition(rect_x, rect_y);
     m_window.draw(m_void_card);
     if (!m_hand.empty()) {
-        if (m_hand_index < m_hand.size() - 1) {
+        if (m_hand_index < m_hand.size() - 1 or m_hand_index == npos) {
             m_card_back.setPosition(rect_x, rect_y);
             m_window.draw(m_card_back);
         }
@@ -138,7 +138,7 @@ void Klondike::reset()
 {
     m_ptr = nullptr;
     m_selector = 0;
-    m_hand_index = 0;
+    m_hand_index = npos;
     Tas tmp(Tas::Full);
     m_hand = tmp;
 

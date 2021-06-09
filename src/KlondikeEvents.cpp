@@ -24,7 +24,7 @@ void Klondike::handNext()
 {
     m_card_slide.play(m_sound);
     if (m_hand_index == m_hand.size() - 1) {
-        m_hand_index = 0;
+        m_hand_index = npos;
         return;
     }
     m_hand_index++;
@@ -33,7 +33,7 @@ void Klondike::handNext()
 
 void Klondike::selectHand()
 {
-    if (m_ptr || m_hand.empty())
+    if (m_ptr || m_hand.empty() || m_hand_index == npos)
         m_ptr = nullptr;
     else
         m_ptr = &m_hand;

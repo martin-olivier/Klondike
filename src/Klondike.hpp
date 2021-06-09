@@ -60,4 +60,6 @@ public:
     void PileToPile(unsigned int x, unsigned int y);
 
     bool isGameWon();
+
+    static constexpr size_t npos = -1;
 };

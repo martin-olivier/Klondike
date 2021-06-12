@@ -13,7 +13,6 @@ private:
 
     Tile m_background{};
     Tile m_void_card{};
-    Tile m_as_bar{};
     Tile m_card_back{};
     Tile m_selector_up{};
     Tile m_selector_down{};
@@ -29,6 +28,7 @@ private:
     Tas m_hand;
     std::vector<Tas> m_pile{};
     std::array<Tas, 4> m_goal{};
+    std::array<Tile, 4> m_goal_patern{};
 
     Tas *m_ptr;
     size_t m_selector;

@@ -14,7 +14,10 @@ Klondike::Klondike() : m_sound(true), m_hand(Tas::Full), m_ptr(nullptr), m_selec
 
     m_background.setTexture("resource/backgrounds/background.jpeg");
     m_void_card.setTexture("resource/cards/no_card.bmp");
-    m_as_bar.setTexture("resource/cards/as_cards.bmp");
+    m_goal_patern[0].setTexture("resource/cards/goalDiamonds.bmp");
+    m_goal_patern[1].setTexture("resource/cards/goalClubs.bmp");
+    m_goal_patern[2].setTexture("resource/cards/goalHearts.bmp");
+    m_goal_patern[3].setTexture("resource/cards/goalSpades.bmp");
     m_card_back.setTexture("resource/cards/card_back.bmp");
     m_selector_up.setTexture("resource/selector_up.bmp");
     m_selector_down.setTexture("resource/selector_down.bmp");
@@ -58,8 +61,8 @@ void Klondike::draw()
     m_window.draw(m_background);
 
     for (int i = 0; i < 4; i++) {
-        m_as_bar.setPosition(rect_x, rect_y);
-        m_window.draw(m_as_bar);
+        m_goal_patern[i].setPosition(rect_x, rect_y);
+        m_window.draw(m_goal_patern[i]);
         m_goal[i][m_goal[i].size() - 1].setPosition(rect_x, rect_y);
         m_window.draw(m_goal[i][m_goal[i].size() - 1]);
         rect_x += 160;

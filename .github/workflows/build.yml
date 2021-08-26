@@ -1,0 +1,32 @@
+name: Build
+
+on: [push]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build_ubuntu:
+    name: ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: update packages
+        run: sudo apt-get update
+      - name: install sfml
+        run: sudo apt-get install libsfml-dev
+      - name: make Klondike
+        run: make
+
+  build_macos:
+    name: macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install sfml
+        run: brew install sfml
+      - name: make Klondike
+        run: make

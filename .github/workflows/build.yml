@@ -1,4 +1,4 @@
-name: Build
+name: CI
 
 on: [push]
 
@@ -10,23 +10,18 @@ jobs:
   build_ubuntu:
     name: ubuntu
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: update packages
-        run: sudo apt-get update
-      - name: install sfml
-        run: sudo apt-get install libsfml-dev
-      - name: make Klondike
-        run: make
+      - name: Update Packages
+        run: sudo apt update
 
-  build_macos:
-    name: macOS
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
+      - name: Install SFML
+        run: sudo apt install -y libsfml-dev
 
-      - name: install sfml
-        run: brew install sfml
-      - name: make Klondike
-        run: make
+      - name: Generate Build File
+        run: cmake . -B build
+
+      - name: Build Project
+        run: cmake --build build

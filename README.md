@@ -1,25 +1,18 @@
 # Klondike
 A Klondike game written in C++
-![Exemple](resource/exemple.png)
+![Exemple](.github/example.png)
 
-# Installation
+# Prerequirement
 
-You will need the SFML library :
-```
-# on Ubuntu
-
-sudo apt-get install libsfml-dev
-
-# on Mac OS
-
-brew install sfml
-```
+You will need to install the SFML library to build the game:  
+https://www.sfml-dev.org/download/sfml/2.5.1/
 
 # Build
 
 After cloning the repository enter the following commands to build the game :
 ```
-make
+cmake . -B build
+cmake --build build
 ```
 
 # Usage
